@@ -1,0 +1,136 @@
+<style>
+
+*:focus {
+    outline: none;
+}
+
+  ngb-carousel .wrapper {
+    position: relative;
+
+      padding-top: 25%;
+      padding-left:4%;
+      padding-right: 10%;
+      height: 440px;
+  }
+
+  ngb-carousel .wrapper2{
+    position: relative;
+    padding-top: 25%;
+    padding-left: 4%;
+    padding-right: 10%;
+    height: 220px;
+}
+
+ngb-carousel .wrapper2>img {
+    position: absolute;
+    top: 10%;
+      left: 4%;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+  }
+
+  ngb-carousel .wrapper>img {
+    position: absolute;
+    top: 10%;
+      left: 4%;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+  }
+
+
+
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.05); /* (150% zoom)*/
+}
+
+.carousel-caption{
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 65%, rgba(255, 255, 255, 0)90%);
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 5.9%;
+  padding-top: 5%;
+  padding-bottom: 3%;
+}
+
+.my_carousel_cap{
+  height: 20%;
+    background-image: linear-gradient(
+0deg
+, rgba(0, 0, 0, 1) 65%, rgba(255, 255, 255, 0)90%);
+    display: block;
+
+    left: 0;
+    right: 0;
+    margin-left: 5.9%;
+    padding-top: 15%;
+    padding-bottom: 3%;
+    bottom: 0;
+    top: 62%;
+    padding-bottom: 9%;
+}
+
+.carousel-control-prev{
+  z-index: 50;
+}
+
+.carousel-control-next{
+ z-index:50;
+}
+
+
+  </style>
+
+  <div *ngIf = "!this.mobile">
+  <div class="container-fluid  zoom" style="background-color: rgb(7, 5, 38); padding-left: 5%;padding-right: 5%;">
+
+    <ngb-carousel *ngIf="images" style="display: block;padding-right: 5%; height: max-content;"
+    (mouseover)="display_text=true" (mouseout)="display_text=false" [interval]="50">
+      <ng-template ngbSlide *ngFor="let image of images; index as i;">
+        <a routerLink="{{getDetailLink(i)}}"     routerLinkActive="active">
+          <div class="wrapper">
+            <img [src]="image" alt="Random first slide" style="margin-left: 2%;">
+          </div>
+        </a>
+        <div *ngIf="display_text" class="carousel-caption">
+          <h3 style="padding-left: 5.5%; font-size: medium; font-weight: normal; text-align: left;" >{{titles[i]}}</h3>
+        </div>
+      </ng-template>
+
+    </ngb-carousel>
+    </div>
+  </div>
+
+  <div *ngIf = "this.mobile">
+    <div class="container-fluid  zoom" style="background-color: rgb(7, 5, 38); padding-left: 5%;padding-right: 5%; padding-top: 10%">
+
+      <ngb-carousel *ngIf="images" style="display: block;padding-right: 5%; height: max-content;"
+      [showNavigationIndicators]="false">
+        <ng-template ngbSlide *ngFor="let image of images; index as i;">
+          <a routerLink="{{getDetailLink(i)}}"     routerLinkActive="active">
+            <div class="wrapper2">
+              <img [src]="image" alt="Random first slide" style="margin-left: 2%;">
+            </div>
+          </a>
+          <div class="carousel-caption my_carousel_cap">
+            <h3 style="padding-left: 5.5%; font-size: small; font-weight: 300; text-align: left;" >{{titles[i]}}</h3>
+          </div>
+        </ng-template>
+
+      </ngb-carousel>
+      </div>
+
+
+  </div>
+

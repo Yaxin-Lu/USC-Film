@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/my_dark"
+        android:theme="@style/MySearchViewStyle"
+        >
+
+        <android.widget.SearchView
+            android:id="@+id/search_view"
+            android:layoutDirection="rtl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/transparent"
+            android:submitBackground="@android:color/transparent"
+            style="@style/MySearchViewStyle"
+            />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/search_warn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:gravity="center"
+        android:text="No result found."
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:visibility="gone" />
+
+
+</LinearLayout>
+
+

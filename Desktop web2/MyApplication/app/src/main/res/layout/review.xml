@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginLeft="20dp"
+    android:theme="@style/normalTheme"
+    android:background="@color/my_dark">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:outlineSpotShadowColor="@color/my_blue"
+        android:shadowRadius="100"
+        app:cardBackgroundColor="@color/my_dark"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="0dp"
+                android:text="hello"
+                android:textColor="@color/my_blue"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vote_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:drawableRight="@drawable/ic_baseline_star_rate_24"
+                android:text="Text"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="normal" />
+
+
+            <TextView
+                android:id="@+id/my_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="none"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:text="I'm having trouble displaying some text in a dialog. When the user has forgotten their password, I use the TextView to display a message explaining what happens when they put their email address in. The layout for this is:Changing the TextView to android:textAppearance=?android:attr/textAppearanceSmall
+                cuts the string off at the same point, displaying three lines. I am now wondering if this is a string problem and not a TextVilem."
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
